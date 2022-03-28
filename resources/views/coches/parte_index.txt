@@ -1,0 +1,14 @@
+<td class="border px-4 py-2">
+                        <a href="{{ route('coches.edit', ['coche' => $coche]) }}" class="text-blue-400">{{ __("Editar") }}</a> |
+                        <a
+                            href="#"
+                            class="text-red-400"
+                            onclick="event.preventDefault();
+                                document.getElementById('delete-coche-{{ $coche->id }}-form').submit();"
+                        >{{ __("Eliminar") }}
+                        </a>
+                        <form id="delete-coche-{{ $coche->id }}-form" action="{{ route('coches.destroy', ['coche' => $coche]) }}" method="POST" class="hidden">
+                            @method("DELETE")
+                            @csrf
+                        </form>
+                    </td>
