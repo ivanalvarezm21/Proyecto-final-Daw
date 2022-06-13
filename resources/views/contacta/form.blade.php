@@ -1,7 +1,7 @@
 @if(Auth::check())
-<form class="w-full max-w-lg border-4 " method="POST" action="{{ route('contacta.store') }}">
+<form class="w-full max-w-lg border-4 " method="POST" action="{{ route('contacta.store') }}" style="background-color:lightgray">
     @csrf
-     <h1 class="font-semibold py-5 text-blue mb-10 bg-blue-900 text-white px-5"> Formulario </h1>
+     <h1 class="font-semibold py-5 text-blue mb-10 bg-blue-900 text-white px-5"> Formulario para contactar al administrador</h1>
     
     <div class="flex flex-wrap -mt-10">
         <div class="w-full px-5">
@@ -46,6 +46,7 @@
                 {{ $message }}
             </div>
             @enderror
+            <p class="text-gray-600 text-s text-center italic" style="padding-top:20px">Intentaremos responder lo antes posible!</p>
         </div>
     </div>
     <div class="md:flex md:items-center">

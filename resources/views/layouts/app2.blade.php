@@ -15,7 +15,7 @@
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
-<body class="bg-green-100 h-screen antialiased leading-none font-sans">
+<body class="bg-green-100 h-screen antialiased leading-none font-sans" style="background-image: url('https://cdn.pixabay.com/photo/2016/11/14/09/23/volkswagen-1822996_960_720.jpg'); background-size:1500px 1000px;">
     <div id="app">
         <header class="bg-blue-900 py-6">
             <div class="container mx-auto flex justify-between items-center px-6">

@@ -2,9 +2,9 @@
 
 @section("content")
 @if(Auth::check() and Auth::user()->hasRoles('admin'))
-    <div class="flex justify-center flex-wrap bg-gray-200 p-4 mt-5">
+    <div class="flex justify-center flex-wrap bg-red-200 p-4 mt-5">
         <div class="text-center">
-            <h1 class="mb-5">{{ __("Crear coche nuevo") }}</h1>
+            <h1 class="mb-5" style="font-weight:bold">{{ __("Crear coche nuevo") }}</h1>
             <a href="{{ route('coches.create') }}" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
                 {{ __("Crear coche") }}
             </a> 
@@ -15,12 +15,12 @@
 @if(Auth::check() and Auth::user()->hasRoles('guest'))
     <div class="flex justify-center flex-wrap bg-lime-200 p-4 mt-5">
         <div class="text-center">
-            <h1 class="mb-5">{{ __("Listado de coches") }}</h1>
+            <h1 class="mb-5" style="font-weight:bold; font-size:40px">{{ __("Listado de coches") }}</h1>
         </div>
     </div>
 @endif
 
-    <table class="border-separate border-2 text-center border-gray-500 mt-3" style="width: 100%">
+    <table class="border-separate border-2 text-center border-gray-500 mt-3" style="width: 100%;">
         <thead>
         <tr>
             <th class="px-4 py-2">{{ __("Marca") }}</th>
