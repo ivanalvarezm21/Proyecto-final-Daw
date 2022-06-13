@@ -52,11 +52,11 @@ class CochesController extends Controller
     {
         $this->validate($request, [
             "marca" => "required",
-            "modelo" => "nullable|string",
-            "version" => "nullable|string",
-            "combustible" => "nullable|string",
-            "potencia" => "nullable|string",
-            "precio" => "nullable|string",
+            "modelo" => "required|nullable|string",
+            "version" => "required|nullable|string",
+            "combustible" => "required|nullable|string",
+            "potencia" => "required|nullable|string",
+            "precio" => "required|nullable|string",
         ]);
         Coches::create($request->only("marca","modelo","version","combustible","potencia","precio"));
 

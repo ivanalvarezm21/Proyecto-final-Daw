@@ -30,7 +30,7 @@
             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold my-5" for="modelo">
                 {{ __("Modelo") }}
             </label>
-            <textarea name="modelo" class="no-resize appearance-none block w-full bg-gray-300 text-gray-700 border border-gray-300 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none" id="modelo">{{ old("modelo") ?? $coches->modelo }}</textarea>
+            <input name="modelo" value="{{ old('modelo') ?? $coches->modelo }}" class="appearance-none block w-full bg-gray-300 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="modelo" type="text">
             <p class="text-gray-600 text-xs italic -my-3">{{ __("Modelo del coche") }}</p>
             @error("modelo")
             <div class="border border-red-400 rounded-b bg-red-100 mt-1 px-4 py-3 text-red-700">
@@ -45,7 +45,7 @@
             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold my-5" for="version">
                 {{ __("Version") }}
             </label>
-            <textarea name="version" class="no-resize appearance-none block w-full bg-gray-300 text-gray-700 border border-gray-300 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none" id="version">{{ old("version") ?? $coches->version }}</textarea>
+            <input name="version" value="{{ old('version') ?? $coches->version }}" class="appearance-none block w-full bg-gray-300 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="version" type="text">
             <p class="text-gray-600 text-xs italic -my-3">{{ __("Version del coche") }}</p>
             @error("version")
             <div class="border border-red-400 rounded-b bg-red-100 mt-1 px-4 py-3 text-red-700">
@@ -60,7 +60,7 @@
             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold my-5" for="modelo">
                 {{ __("Combustible") }}
             </label>
-            <textarea name="combustible" class="no-resize appearance-none block w-full bg-gray-300 text-gray-700 border border-gray-300 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none" id="combustible">{{ old("combustible") ?? $coches->combustible }}</textarea>
+            <input name="combustible" value="{{ old('combustible') ?? $coches->combustible }}" class="appearance-none block w-full bg-gray-300 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="combustible" type="text">
             <p class="text-gray-600 text-xs italic -my-3">{{ __("Combustible que utiliza el motor") }}</p>
             @error("combustible")
             <div class="border border-red-400 rounded-b bg-red-100 mt-1 px-4 py-3 text-red-700">
@@ -75,7 +75,7 @@
             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold my-5" for="potencia">
                 {{ __("Potencia") }}
             </label>
-            <textarea name="potencia" class="no-resize appearance-none block w-full bg-gray-300 text-gray-700 border border-gray-300 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none" id="potencia">{{ old("potencia") ?? $coches->potencia }}</textarea>
+            <input name="potencia" value="{{ old('potencia') ?? $coches->potencia }}" class="appearance-none block w-full bg-gray-300 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="potencia" type="text">
             <p class="text-gray-600 text-xs italic -my-3">{{ __("Potencia del motor") }}</p>
             @error("potencia")
             <div class="border border-red-400 rounded-b bg-red-100 mt-1 px-4 py-3 text-red-700">
@@ -90,7 +90,7 @@
             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold my-5" for="precio">
                 {{ __("Precio") }}
             </label>
-            <textarea name="precio" class="no-resize appearance-none block w-full bg-gray-300 text-gray-700 border border-gray-300 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none" id="precio">{{ old("precio") ?? $coches->precio }}</textarea>
+            <input name="precio" value="{{ old('precio') ?? $coches->precio }}" class="appearance-none block w-full bg-gray-300 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="precio" type="text">
             <p class="text-gray-600 text-xs italic -my-3">{{ __("Precio del vehículo") }}</p>
             @error("precio")
             <div class="border border-red-400 rounded-b bg-red-100 mt-1 px-4 py-3 text-red-700">
@@ -99,6 +99,7 @@
             @enderror
         </div>
     </div>
+    <br>
     <div class="md:flex md:items-center">
         <div class="md:w-1/3">
             <button class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="submit">
