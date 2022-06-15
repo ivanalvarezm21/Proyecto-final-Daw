@@ -15,8 +15,8 @@ return [
     */
 
     'title' => 'AdminLTE 3',
-    'title_prefix' => 'ProyectoIván |',
-    'title_postfix' => '| ProyectoIván',
+    'title_prefix' => 'ProyectoFinalIván |',
+    'title_postfix' => '| ProyectoFinalIván',
 
     /*
     |--------------------------------------------------------------------------
