@@ -21,7 +21,7 @@
 @if(Auth::check() and Auth::user()->hasRoles('guest'))
     <div class="flex justify-center flex-wrap bg-lime-200 p-4 mt-5">
         <div class="text-center">
-            <h1 class="mb-5" style="font-weight:bold; font-size:40px">{{ __("Listado de coches") }}</h1>
+            <h1 class="mb-5" style="font-weight:bold; font-size:40px">{{ __("Listado de anuncios publicados") }}</h1>
             <p>Bienvenido al listado general, aquí podrás ver todos los coches disponibles:</p>
         </div>
     </div>

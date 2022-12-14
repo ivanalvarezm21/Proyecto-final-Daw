@@ -1,7 +1,8 @@
 <?php
     use Illuminate\Support\Facades\Route;
     use App\Http\Controllers\Admin\AdminController;
-    
+    use App\Http\Controllers\Admin\UserController;
+
     Route::get('admin',[AdminController::class, 'index'])->name('admin.index');
 
     Route::prefix('admin')->group(function () {
