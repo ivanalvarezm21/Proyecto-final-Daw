@@ -57,11 +57,19 @@ class CochesController extends Controller
             "combustible" => "required|nullable|string",
             "potencia" => "required|nullable|string",
             "precio" => "required|nullable|string",
+            "año" => "nullable|string",
+            "kilometros" => "nullable|string",
+            "correo" => "nullable|string",
+            "telefono" => "nullable|string",
         ]);
-        Coches::create($request->only("marca","modelo","version","combustible","potencia","precio"));
+        Coches::create($request->only("marca","modelo","version","combustible","potencia","precio","año","kilometros","correo","telefono"));
 
         return redirect(route("coches.index"))
             ->with("success", __("¡Coche añadido con éxito!"));
+
+        if($request->hasFile('imagen')){
+            $request['imagen']=$request->file('imagen')->store('storage');
+        }
     }
 
     /**
@@ -72,7 +80,8 @@ class CochesController extends Controller
      */
     public function show($id)
     {
-        //
+        $coches=Coches::find($id);
+        return view("coches.info", compact("coches"));
     }
 
     /**
@@ -110,8 +119,12 @@ class CochesController extends Controller
             "combustible" => "nullable",
             "potencia" => "nullable",
             "precio" => "nullable",
+            "año" => "nullable",
+            "kilometros" => "nullable",
+            "correo" => "nullable",
+            "telefono" => "nullable",
         ]);
-        $coches->fill($request->only("marca", "modelo", "version", "combustible", "potencia", "precio"))->save();
+        $coches->fill($request->only("marca", "modelo", "version", "combustible", "potencia", "precio", "año", "kilometros", "correo", "telefono"))->save();
         
         return redirect(route("coches.index"))->with("success", __("¡Coche actualizado con éxito!"));
     }
@@ -127,5 +140,11 @@ class CochesController extends Controller
         $coches=Coches::find($id);
         $coches->delete();
         return back()->with("success",__("¡Coche eliminado!"));
+    }
+
+    public function info($id)
+    {
+        $coches=Coches::find($id);
+        return view("coches.info", compact("coches"));
     }
 }

@@ -68,7 +68,7 @@ return [
     'usermenu_header' => true,
     'usermenu_header_class' => 'bg-success',
     'usermenu_image' => true,
-    'usermenu_desc' => false,
+    'usermenu_desc' => true,
     'usermenu_profile_url' => false,
 
     /*
@@ -167,7 +167,7 @@ return [
     |
     */
 
-    'right_sidebar' => true,
+    'right_sidebar' => false,
     'right_sidebar_icon' => 'fas fa-cogs',
     'right_sidebar_theme' => 'dark',
     'right_sidebar_slide' => true,
@@ -247,68 +247,39 @@ return [
             'can'  => 'manage-blog',
         ],
         [
-            //'text'        => '',
-            //'url'         => '',
-            //'icon'        => '',
-            //'label'       => '',
-            //'label_color' => '',
+            'text'        => 'Menú principal',
+            'url'         => '/admin',
+            'icon'        => 'fas fa-fw fa-home',
         ],
-        ['header' => 'Coches'],
+        ['header' => 'Acciones del administrador'],
         [
-            'text' => 'Crear Coche',
-            'url'  => 'http://coches.test/coches/create',
-            'icon' => 'fas fa-fw fa-car',
-            'icon_color' => 'success',
-            
-        ],
-        [
-            'text' => 'Listar Coches',
-            'url'  => 'admin/list_coches',
-            'icon' => 'fas fa-fw fa-car',
-            'icon_color' => 'success',
-        ],
-        [
-            'text' => 'Listar Usuarios',
-            'url'  => 'admin/list_users',
-            'icon' => 'fas fa-fw fa-user',
-            'icon_color' => 'success',
-        ],
-        [
-            'text'    => null,
-            'icon'    => null,
+            'text'    => 'Acciones para coches',
+            'icon'    => 'fas fa-fw fa-car',
             'submenu' => [
-            //     [
-            //         'text' => 'level_one',
-            //         'url'  => '#',
-            //     ],
-            //     [
-            //         'text'    => 'level_one',
-            //         'url'     => '#',
-            //         'submenu' => [
-            //             [
-            //                 'text' => 'level_two',
-            //                 'url'  => '#',
-            //             ],
-            //             [
-            //                 'text'    => 'level_two',
-            //                 'url'     => '#',
-            //                 'submenu' => [
-            //                     [
-            //                         'text' => 'level_three',
-            //                         'url'  => '#',
-            //                     ],
-            //                     [
-            //                         'text' => 'level_three',
-            //                         'url'  => '#',
-            //                     ],
-            //                 ],
-            //             ],
-            //         ],
-            //     ],
-            //    [
-            //        'text' => 'level_one',
-            //        'url'  => '#',
-            //    ],
+                [
+                    'text' => 'Crear o modificar un coche',
+                    'url'  => 'admin/create_coches',
+                    'icon' => 'fas fa-fw fa-car',
+                    'icon_color' => 'success',
+                ],
+                [
+                    'text' => 'Listar coches',
+                    'url'  => 'admin/list_coches',
+                    'icon' => 'fas fa-fw fa-car',
+                    'icon_color' => 'success',
+                ],
+            ],
+        ],
+        [
+            'text'    => 'Acciones para usuarios',
+            'icon'    => 'fas fa-fw fa-user',
+            'submenu' => [
+                [
+                    'text' => 'Listar usuarios',
+                    'url'  => 'admin/list_users',
+                    'icon' => 'fas fa-fw fa-user',
+                    'icon_color' => 'success',
+                ],
             ],
         ],
         // ['header' => 'labels'],

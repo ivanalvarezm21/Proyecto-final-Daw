@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Role;
 use App\Models\Coches;
+use App\Http\Controllers\CochesController;
 
 class AdminController extends Controller
 {
@@ -33,5 +34,11 @@ class AdminController extends Controller
         return view('admin.list_coches', compact('coches'));
     }
 
-    
+    public function create_coches()
+
+    {        
+        $coches = Coches::all();
+        return view('admin.create_coches', compact('coches'));
+    }
+
 }

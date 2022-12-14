@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <!-- style="background-image: url('https://cdn.pixabay.com/photo/2016/11/14/09/23/volkswagen-1822996_960_720.jpg'); background-size:1600px 1000px; background-repeat:no-repeat;" -->
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -14,24 +14,27 @@
     
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"></link>
 </head>
-<body class="bg-green-100 h-screen antialiased leading-none font-sans" style="background-image: url('https://cdn.pixabay.com/photo/2016/11/14/09/23/volkswagen-1822996_960_720.jpg'); background-size:1500px 1000px;">
+<body class="bg-white-100 h-screen antialiased leading-none font-sans">
     <div id="app">
         <header class="bg-blue-900 py-6">
             <div class="container mx-auto flex justify-between items-center px-6">
                 <div>
                     <a href="{{ url('/') }}" class="text-lg font-semibold text-gray-100 no-underline px-5">
                         {{ config('app.name', 'Laravel') }}
-                    </a> 
                     @auth
                         <a href="{{ route('coches.index') }}" class="text-lg font-semibold text-gray-100 no-underline px-5">
-                            {{ __("Listar los coches") }}
+                            {{ __("Listar los coches") }}</a>
                    
                         <a href="{{ route('contacta.index') }}" class="text-lg font-semibold text-gray-100 no-underline px-5">
                             {{ __("Contacto") }}
                         @if(Auth::check() and Auth::user()->hasRoles('admin'))
                         <a href="{{ url('/admin') }}" class="text-lg font-semibold text-gray-100 no-underline px-5">
                             {{ __("Panel Administrador") }}
+                        </a>
                         @endif
                     @endauth
                 </div>
@@ -47,7 +50,7 @@
                         <a href="{{ route('logout') }}"
                            class="no-underline hover:underline"
                            onclick="event.preventDefault();
-                                document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
+                                document.getElementById('logout-form').submit();">{{ __('Salir') }}</a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
                             {{ csrf_field() }}
                         </form>
@@ -71,6 +74,25 @@
 
         
         @yield('content')
+
     </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+<body class="bg-white-100 h-screen antialiased leading-none font-sans">
+    <div id="app">
+        <footer class="bg-blue-900 mt-2 py-6">
+            <div class="container mx-auto flex px-6 d-flex justify-content-between">
+                <p class="text-white">Página creada por Iván Álvarez Mera</p>
+                <p class="text-white">Copyright© 2022</p>
+            </div>
+        </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>

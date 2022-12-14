@@ -21,6 +21,10 @@ class CreateCochesTable extends Migration
             $table->string('combustible');
             $table->string('potencia');
             $table->string('precio');
+            $table->string('año')->nullable();
+            $table->string('kilometros')->nullable();
+            $table->string('correo')->nullable();
+            $table->string('telefono')->nullable();
             $table->timestamps();
         });
     }

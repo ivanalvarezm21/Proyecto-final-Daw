@@ -11,6 +11,8 @@
         <th scope="col">{{ ("Email") }}</th>
         <th scope="col">{{ ("Rol") }}</th>
         <th scope="col">{{ ("Fecha") }}</th>
+        <th scope="col">{{ ("Editar") }}</th>
+        <th scope="col">{{ ("Eliminar") }}</th>
     </tr>
     </thead>
     <tbody>
@@ -28,6 +30,16 @@
                 </td>
                 <td>{{ date_format($user->created_at, "d/m/Y") }}</td>
 
+            <!--    <td class="border px-4 py-2"><a href="{{ route('users.edit',$user->id)}}">{{ __(" Editar") }}</a></td>
+                <td>
+                    <a href="#" style="color:red" onclick="event.preventDefault(); document.getElementById('delete-project-{{ $user->id }}-form').submit();"
+                        >{{ __(" Eliminar") }}
+                    </a>
+                        <form id="delete-project-{{ $user->id }}-form" action="{{ route('users.destroy', $user->id) }}" method="POST" class="hidden">
+                            @method("DELETE")
+                            @csrf
+                        </form>
+                </td> -->
             </tr>
         @empty
             <tr>

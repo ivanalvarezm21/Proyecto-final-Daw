@@ -41,9 +41,10 @@
             text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none 
             focus:bg-white focus:border-gray-500 h-48 resize-none" id="mensaje"></textarea>
             <p class="text-gray-600 text-xs italic -my-3">{{ __("Escribe tu mensaje") }}</p>
+            <br>
             @error("mensaje")
             <div class="border border-red-400 rounded-b bg-red-100 mt-1 px-4 py-3 text-red-700">
-                {{ $message }}
+                <p>El mensaje no puede estar vacío</p>
             </div>
             @enderror
             <p class="text-gray-600 text-s text-center italic" style="padding-top:20px">Intentaremos responder lo antes posible!</p>

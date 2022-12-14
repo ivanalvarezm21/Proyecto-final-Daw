@@ -14,7 +14,11 @@ class Coches extends Model
         'version',
         'combustible',
         'potencia',
-        'precio'
+        'precio',
+        'año',
+        'kilometros',
+        'correo',
+        'telefono',
     ];
     
     public function user(){
