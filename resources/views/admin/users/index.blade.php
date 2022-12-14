@@ -13,7 +13,7 @@
                 }}
                 </td>
                 <td width="10px">
-                <a class="btn btn-primary" href="{{ route('users.edit', $user) }}">Editar</a>
+                <!-- <a class="btn btn-primary" href="{{ route('users.edit', $user) }}">Editar</a> -->
             </tr>
     </body>
 </html>
