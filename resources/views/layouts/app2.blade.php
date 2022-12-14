@@ -15,23 +15,23 @@
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
-<body class="bg-green-100 h-screen antialiased leading-none font-sans" style="background-image: url('https://cdn.pixabay.com/photo/2016/11/14/09/23/volkswagen-1822996_960_720.jpg'); background-size:1500px 1000px;">
+<body class="bg-green-100 h-screen antialiased leading-none font-sans" style="background-image: url('https://cdn.pixabay.com/photo/2016/11/14/09/23/volkswagen-1822996_960_720.jpg'); background-size:1500px 1000px; background-repeat:no-repeat;">
     <div id="app">
         <header class="bg-blue-900 py-6">
             <div class="container mx-auto flex justify-between items-center px-6">
                 <div>
                     <a href="{{ url('/') }}" class="text-lg font-semibold text-gray-100 no-underline px-5">
                         {{ config('app.name', 'Laravel') }}
-                    </a> 
                     @auth
                         <a href="{{ route('coches.index') }}" class="text-lg font-semibold text-gray-100 no-underline px-5">
-                            {{ __("Listar los coches") }}
+                            {{ __("Listar los coches") }}</a>
                    
                         <a href="{{ route('contacta.index') }}" class="text-lg font-semibold text-gray-100 no-underline px-5">
                             {{ __("Contacto") }}
                         @if(Auth::check() and Auth::user()->hasRoles('admin'))
                         <a href="{{ url('/admin') }}" class="text-lg font-semibold text-gray-100 no-underline px-5">
                             {{ __("Panel Administrador") }}
+                        </a>
                         @endif
                     @endauth
                 </div>

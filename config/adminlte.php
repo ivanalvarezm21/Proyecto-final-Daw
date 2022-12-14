@@ -253,10 +253,10 @@ return [
             //'label'       => '',
             //'label_color' => '',
         ],
-        ['header' => 'Coches'],
+        ['header' => 'Acciones del administrador'],
         [
             'text' => 'Crear Coche',
-            'url'  => 'http://coches.test/coches/create',
+            'url'  => 'admin/create_coches',
             'icon' => 'fas fa-fw fa-car',
             'icon_color' => 'success',
             

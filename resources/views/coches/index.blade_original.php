@@ -101,62 +101,6 @@
             @endforelse
         </tbody>
     </table>
-    <table class="border-separate border-2 text-center border-gray-500 mt-3" style="width: 100%; background-color:rgb(211,211,211);opacity:1; ">
-        <thead>
-        <tr>
-            <th class="px-4 py-2">{{ __("Id") }}</th>
-            <th class="px-4 py-2">{{ __("Marca") }}</th>
-            <th class="px-4 py-2">{{ __("Modelo") }}</th>
-            <th class="px-4 py-2">{{ __("Version") }}</th>
-            <th class="px-4 py-2">{{ __("Combustible") }}</th>
-            <th class="px-4 py-2">{{ __("Potencia") }}</th>
-            <th class="px-4 py-2">{{ __("Precio") }}</th>
-            @if(Auth::check() and Auth::user()->hasRoles('admin'))
-            <th class="px-4 py-2">{{ __("Acciones") }}</th>
-            @endif
-            <th class="px-4 py-2">Imagen</th>
-        </tr>
-        </thead>
-        <tbody>
-            @forelse($coches as $coche)
-                <tr>
-                    <td class="border px-4 py-2">{{ $coche->id }}</td>
-                    <td class="border px-4 py-2">{{ $coche->marca }}</td>
-                    <td class="border px-4 py-2">{{ $coche->modelo }}</td>
-                    <td class="border px-4 py-2">{{ $coche->version }}</td>
-                    <td class="border px-4 py-2">{{ $coche->combustible }}</td>
-                    <td class="border px-4 py-2">{{ $coche->potencia }}</td>
-                    <td class="border px-4 py-2">{{ $coche->precio }}</td>
-                    @if(Auth::check() and Auth::user()->hasRoles('admin'))
-                    <td class="border px-4 py-2"><a  style="color:blue" href="{{ route('coches.edit',$coche->id)}}">Editar |</a>
-                    <a href="#" class="text-danger" style="color:red" onclick="event.preventDefault(); document.getElementById('delete-project-{{ $coche->id }}-form').submit();"
-                        >{{ __(" Eliminar") }}
-                    </a>
-                        <form id="delete-project-{{ $coche->id }}-form" action="{{ route('coches.destroy', $coche->id) }}" method="POST" class="hidden">
-                            @method("DELETE")
-                            @csrf
-                        </form>
-                    </td>
-                    @endif
-                    <td class="border px-4 py-2">
-                        @if($coche->modelo == 'Golf') <!--Coche 1-->
-                        <!-- <img src="https://fotos.perfil.com/2020/05/13/asi-es-el-volkswagen-golf-gti-de-octava-generacion-955561.jpg" alt="imagen-1"> -->
-                        <a href="https://fotos.perfil.com/2020/05/13/asi-es-el-volkswagen-golf-gti-de-octava-generacion-955561.jpg" style="color:blue">Imagen</a>
-                    </td>
-                </tr>
-            @endif
-            @empty
-                <tr>
-                    <td colspan="12">
-                        <div class="bg-red-100 text-center border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-                            <p><strong class="font-bold">{{ __("No hay coches") }}</strong></p>
-                            <span class="block sm:inline">{{ __("Todavía no hay coches que mostrar aquí") }}</span>
-                        </div>
-                    </td>
-                </tr>
-            @endforelse
-        </tbody>
-    </table>
     @if($coches->count())
         <div class="mt-3">
             {{ $coches->links() }}
