@@ -70,6 +70,15 @@
         </div>
         </div>
     </div>
+    <div class="d-flex flex-row justify-content-center">
+        <div class="card w-full p-6 mt-3" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title text-center" style="font-weight:bold;">{{ __("Imagen del vehículo") }}</h5>
+            <img class="card-text text-center" src="{{ $coches->imagen }}">
+            <a href="{{ $coches->imagen }}" class="btn btn-primary text-center mt-3">Enlace</a>
+        </div>
+        </div>
+    </div>
     </body>
 
     <h3 style="font-weight:bold" class="text-center mt-3">¿Interesado en el vehículo?</h3>

@@ -25,6 +25,7 @@ class CreateCochesTable extends Migration
             $table->string('kilometros')->nullable();
             $table->string('correo')->nullable();
             $table->string('telefono')->nullable();
+            $table->string('imagen')->nullable();
             $table->timestamps();
         });
     }

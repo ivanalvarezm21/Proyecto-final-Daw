@@ -144,6 +144,17 @@
         </div>
     </div>
 
+    <div class="flex flex-wrap -mx-2">
+        <div class="w-full px-5">
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold" for="imagen">
+                {{ __("Url de la imagen") }}
+            </label>
+            <input name="imagen" value="{{ old('imagen') ?? $coches->imagen }}" class="appearance-none block w-full bg-gray-300 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="imagen" type="text">
+            <p class="text-gray-600 text-xs italic -my-3">{{ __("Imagen del vehículo (Opcional)") }}</p>
+            <br>
+        </div>
+    </div>
+
     <div class="md:flex md:items-center">
         <div class="md:w-1/3">
             <button class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="submit">

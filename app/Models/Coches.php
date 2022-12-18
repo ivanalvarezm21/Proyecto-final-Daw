@@ -19,6 +19,7 @@ class Coches extends Model
         'kilometros',
         'correo',
         'telefono',
+        'imagen',
     ];
     
     public function user(){

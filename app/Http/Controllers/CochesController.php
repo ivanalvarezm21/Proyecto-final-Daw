@@ -61,8 +61,9 @@ class CochesController extends Controller
             "kilometros" => "nullable|string",
             "correo" => "nullable|string",
             "telefono" => "nullable|string",
+            "imagen" => "nullable|string",
         ]);
-        Coches::create($request->only("marca","modelo","version","combustible","potencia","precio","año","kilometros","correo","telefono"));
+        Coches::create($request->only("marca","modelo","version","combustible","potencia","precio","año","kilometros","correo","telefono", "imagen"));
 
         return redirect(route("coches.index"))
             ->with("success", __("¡Coche añadido con éxito!"));
@@ -123,8 +124,9 @@ class CochesController extends Controller
             "kilometros" => "nullable",
             "correo" => "nullable",
             "telefono" => "nullable",
+            "imagen" => "nullable",
         ]);
-        $coches->fill($request->only("marca", "modelo", "version", "combustible", "potencia", "precio", "año", "kilometros", "correo", "telefono"))->save();
+        $coches->fill($request->only("marca", "modelo", "version", "combustible", "potencia", "precio", "año", "kilometros", "correo", "telefono", "imagen"))->save();
         
         return redirect(route("coches.index"))->with("success", __("¡Coche actualizado con éxito!"));
     }
