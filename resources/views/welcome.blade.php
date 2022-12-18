@@ -43,13 +43,12 @@
         </div>
     @endif
 
-    <div class="min-h-screen flex items-center justify-center text-center">
+    <div class="min-h-screen flex items-center justify-content-end text-center">
         <div class="flex flex-col justify-around h-full">
             <div>
-                <h1 class="mb-6 text-gray-600 text-center font-light tracking-wider text-4xl sm:mb-8 sm:text-6xl" style="color: white">
+                <h1 class="mb-6 text-gray text-center font-light tracking-wider text-3xl sm:mb-8 sm:text-6xl" style="color: white">
                     Automóviles Iván
                 </h1>
-                <p></p>
             </div>
         </div>
     </div>
